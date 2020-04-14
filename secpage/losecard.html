@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" type="text/css" href="../plugins/artDialog/css/ui-dialog.css"/>
+<link rel="stylesheet" type="text/css" href="../plugins/jDialog/jdialog.css">
+<link rel="stylesheet" type="text/css" href="../plugins/swiper/swiper.min.css">
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../plugins/laydate/laydate.js"></script>
+<title>丢卡处理</title>
+<style>
+/* laydate */
+.layui-laydate{margin: 0;}
+.layui-laydate-range{width: 472px}
+.layui-laydate-footer{padding: 6px 10px }
+.layui-laydate-header{line-height: 14px }
+.layui-laydate-content td, .layui-laydate-content th{height: 16px }
+.layui-laydate-list li{margin: 0;height: 22px; line-height: 22px;}
+.laydate-month-list li{margin: 4px 9px;}
+.laydate-time-list{overflow: hidden;}
+.laydate-time-list ol{height: 90px;}
+
+
+.abnmad .swiper-container,.swiper-wrapper,.swiper-slide,.swiper-slide img{width: 100%;height: 100%;}
+.abnmad .swiper-pagination-bullet{background: rgba(0,0,0,0);}
+.abnmad .swiper-container-horizontal>.swiper-pagination-bullets,
+.abnmad .swiper-pagination-custom,
+.abnmad .swiper-pagination-fraction{text-align: right;}
+span.swiper-pagination-bullet.swiper-pagination-bullet-active{color: #fff;}
+.abnmad .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{font-size: 20px;width: 20px;text-align: left;display: inline-block;}
+</style>
+</head>
+<body>
+<div class="abnmad">
+	<div class="madtopd">
+		<div class="maimgd">
+			<div class="swiper-container swiper3">
+			  <div class="swiper-wrapper">
+			    <div class="swiper-slide"><img src="../images/ceshi11.jpg" ></div>
+			    <div class="swiper-slide"><img src="../images/ceshi11.jpg" ></div>
+			    <div class="swiper-slide"><img src="../images/ceshi11.jpg" ></div>
+			  </div>
+			   <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<div class="macond">
+			<p>
+				<span class="first">
+					<span>入场时间：</span>
+					<span class="amdcolor">2019-08-02 17:25:40</span>
+				</span>
+			</p>
+			<p>
+				<span class="first">
+					<span>放行方式：</span>
+					<span class="amdcolor">自动放行</span>
+				</span>
+				<span class="last">
+					<span>通道：</span>
+					<span class="amdcolor">东门入口</span>
+				</span>
+			</p>
+			<p>
+				<span class="first">
+					<span>计费类型：</span>
+					<span class="amdcolor">临时卡</span>
+				</span>
+				<span class="last">
+					<span>车型：</span>
+					<span class="amdcolor">小型车</span>
+				</span>
+			</p>
+			<p>
+				<span class="first">
+					<span>卡号：</span>
+					<span class="amdcolor">123456</span>
+				</span>
+				<span class="last">
+					<span>车牌号：</span>
+					<span class="amdcolor">粤123456</span>
+				</span>
+			</p>
+			<p>
+				<span class="first">
+					<span>已缴金额：</span>
+					<span class="amdcolors">￥0.0</span>
+				</span>
+				
+			</p>
+			<p>
+				<span class="first">
+					<span>缴费时间：</span>
+					<span class="amdcolor">2019-08-02 17:25:40</span>
+				</span>
+				
+			</p>
+			<p>
+				<span class="first">
+					<span>折扣商户：</span>
+					<span class="amdcolor">香满楼</span>
+				</span>
+				<span class="last">
+					<span>折扣类型：</span>
+					<span class="amdcolor">金额折扣</span>
+				</span>
+			</p>
+			<p>
+				<span class="first">
+					<span>折扣时间：</span>
+					<span class="amdcolor">2019-08-02 17:25:40</span>
+				</span>
+				<span class="last">
+					<span>折扣值：</span>
+					<span class="amdcolors">5.00</span>
+				</span>
+			</p>
+			<p class="het">
+				<button type="button" class="btn btn-primary ms" style="margin-right: 20px;">卡片工本费</button>
+				<button type="button" class="btn btn-primary ms" style="margin-right: 20px;">停车费</button>
+				<button type="button" class="btn btn-primary ms">工本费+停车费</button>
+			</p>
+		</div>
+	</div>
+	<div class="atabd">
+		<div class="searchd">
+			车牌：<input type="text">
+			卡号：<input type="text">
+			入场时间：<input type="text" class="begintime" readonly="readonly" autocomplete="off" placeholder="请选择开始时间">
+			到：<input type="text" class="endtime" readonly="readonly" autocomplete="off" placeholder="请选择结束时间">
+			<button type="button" class="btn-primary msd">查询</button>
+		</div>
+		<div class="sertabd">
+			<table  cellspacing="0" cellpadding="0">
+				<tr >
+					<th>入场时间4</th>
+					<th>入口通道</th>
+					<th>车牌</th>
+					<th>卡号</th>
+					<th>计费类型</th>
+					<th>车型</th>
+					<th>已缴金额</th>
+					<th>缴费时间</th>
+					<th>放行方式</th>
+					<th>操作</th>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td><a href="javascript:;" class="acolor">点击收费</a></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td><a href="javascript:;" class="acolor">点击收费</a></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td><a href="javascript:;" class="acolor">点击收费</a></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td><a href="javascript:;" class="acolor">点击收费</a></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td><a href="javascript:;" class="acolor">点击收费</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+		<div class="serpaged">
+			<ul>
+				<li class="trans hov">&lt;&lt;</li>
+				<li class="bor trans hov">&lt;</li>
+				<li class="bor trans hov">&gt;</li>
+				<li class="bor trans hov">&gt;&gt;</li>
+				<li class="bor">转到第：<input type="text"></li>
+				<li class="bor trans hov">GO</li>
+			</ul>
+		</div>
+</div>
+<script src="../plugins/artDialog/dist/dialog-min.js"></script>
+<script src="../plugins/jDialog/jdialog.js"></script>
+<script src="../js/tenet-util.js"></script>
+<script src="../plugins/swiper/swiper.min.js"></script>
+<script type="text/javascript">
+	
+	
+//日历控件
+laydate.render({
+	elem: '.begintime',
+	type: 'datetime',
+	trigger: 'click',
+	
+});
+//结束时间
+laydate.render({
+	elem: '.endtime',
+	type: 'datetime',
+	trigger: 'click',
+	ready: function(date){
+					this.dateTime.hours=23;
+					this.dateTime.minutes=59;
+					this.dateTime.seconds=59;
+				}
+});
+//轮播图
+var mySwiper = new Swiper('.swiper3', {
+	autoplay: false,//可选选项，自动滑动
+	loop: false,
+	pagination : '.swiper-pagination',
+	paginationClickable :true,
+	paginationBulletRender: function (swiper, index, className) {
+		  return '<span class="' + className + '">' + (index + 1) + '</span>';
+	  }
+})
+</script>
+</body>
+</html>

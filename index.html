@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="plugins/artDialog/css/ui-dialog.css"/>
+<link rel="stylesheet" type="text/css" href="plugins/jDialog/jdialog.css">
+<link rel="stylesheet" type="text/css" href="plugins/swiper/swiper.min.css">
+<script src="plugins/laydate/laydate.js"></script>
+<title>停车场专用收费机顶盒</title>
+<style type="text/css">
+/* laydate */
+.layui-laydate{margin: 0;}
+.layui-laydate-range{width: 472px}
+.layui-laydate-footer{padding: 6px 10px }
+.layui-laydate-header{line-height: 14px }
+.layui-laydate-content td, .layui-laydate-content th{height: 16px }
+.layui-laydate-list li{margin: 0;height: 22px; line-height: 22px;}
+.laydate-month-list li{margin: 4px 9px;}
+.laydate-time-list{overflow: hidden;}
+.laydate-time-list ol{height: 90px;}
+.conl .topmr{margin: 5px;}
+
+.swiperd .swiper-container,
+.swiperd .swiper-wrapper,
+.swiperd .swiper-slide,
+.swiperd .swiper-slide img{width: 100%;height: 100%;}
+
+.topimgd .swiper-container,
+.topimgd .swiper-wrapper,
+.topimgd .swiper-slide{width: 100%;height: 100%;}
+.topimgd .swiper-slide img{width: 100%;height: 100px;}
+.topimgd .swcond{margin: 5px;}
+.topimgd .swcond img{width: 100%;height: 100%;}
+.conl .swiper-pagination-bullet{background: rgba(0,0,0,0);}
+.conl .swiper-container-horizontal>.swiper-pagination-bullets,
+.conl .swiper-pagination-custom,
+.conl .swiper-pagination-fraction{text-align: right;}
+span.swiper-pagination-bullet.swiper-pagination-bullet-active{color: #fff;}
+.conl .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{font-size: 20px;width: 20px;text-align: left;display: inline-block;}
+.swiper-button-next{width: 30px;background: url(images/page.png)no-repeat center;background-position: right;}
+.swiper-button-prev{width: 30px;background: url(images/page.png)no-repeat center;background-position:left;}
+.right3floatd{overflow: hidden;}
+.right3floatd li{float: left;width:33.33%;text-align: center;}
+.right3floatd li button.btn{width: 80%;height: 40px;line-height: 40px;}
+
+.sfinpd {text-align: center;padding-top: 5px;}
+.sfinpd select{height: 30px;vertical-align: -1px;width: 100px;}
+.sfinpd p{padding-top: 10px;color: red;font-weight: bold;font-size: 20px;}
+</style>
+</head>
+<body>
+<!--topd-->
+<div class="topd">
+</div>
+<!--/.topd-->
+<!--maind-->
+<div class="maind">
+	<div class="mainnvd">
+		<div class="topld"><span>收费终端</span></div>
+		<div class="toprd">
+			<div>
+				<span class="icon3" states="1" title="展开全屏" onclick="" id="zkqpID"></span>
+			</div>
+				<div>
+					<span class="icon1"></span>
+					<ul class="ioned">
+						<li class="ip" id="zbyxbID">值班员下班(L)</li>
+						<li class="it" id="zbyjbID">值班员交班(J)</li>
+					</ul>
+				</div>
+				<div>	
+					<span class="icon2"></span>
+					<ul class="itwod">
+						<li class="ip" id="change">en cn</li>
+					</ul>
+				</div>
+		</div>
+		<span class="icon3 pd">临时车剩余车位： <span>0</span></span>
+		<span class="icon4 pd">非临时车剩余车位：<span>0</span></span>
+		<span class="icon1 pd">转态链接：<span>0</span></span>
+		<span class="icon6 pd">上班时间： <span>2019-08-16 12:59:59</span></span>
+		<span class="icon7 pd">本班次累计计费：<span class="ifont">￥455.23</span></span>
+		<span class="icon5 pd">值班员： <span>admin01</span></span>
+	</div>
+	<!--./mainnvd-->
+	<div class="bgmaind"></div>
+	<!--./bgmaind-->
+	<div class="maincond">
+		<div class="conld">
+			<div class="conl">
+				<div class="ltopd">
+					<div class="ltcond ltcond1" id="ltcond1">
+						<div class="topimgd swbg">
+							<div class="swiper-container swiper-top" style="background: #fff;">
+							  <div class="swiper-wrapper">
+							    <div class="swiper-slide">
+									<div class="swcond">
+										<div class="bg"></div>
+										<div class="titd">
+											<p class="lf iconc">东门出口</p>
+											<p class="rf">2019-10-14 11:59:59</p>
+										</div>
+										<img src="images/ceshi11.jpg">
+									</div>
+								</div>
+							    <div class="swiper-slide">
+									<div class="swcond">
+										<div class="bg"></div>
+										<div class="titd">
+											<p class="lf iconc">东门入口</p>
+											<p class="rf">2019-10-14 11:59:59</p>
+										</div>
+										<img src="images/bg1.png">
+									</div>
+								</div>
+							    <div class="swiper-slide">
+									<div class="swcond">
+										<div class="bg"></div>
+										<div class="titd">
+											<p class="lf iconc">西门入口</p>
+											<p class="rf">2019-10-14 11:59:59</p>
+										</div>
+										<img src="images/ceshi11.jpg">
+									</div>
+								</div>
+							  </div>
+							    <div class="swiper-button-prev" style="z-index: 999;"></div>
+							    <div class="swiper-button-next" style="z-index: 999;"></div>
+							</div>
+						</div>
+						<div class="botmd">
+							<div class="botmld">
+								<select id="inID">
+									<option value ="1">东门入口</option>
+									<option value ="1">东门入2</option>
+								</select>
+								<button type="button" class="btn btn-suc ms">呼叫</button>
+								<button type="button" class="btn btn-deg ms">关闸</button>
+								<button type="button" class="btn btn-primary ms">开闸</button>
+							</div>
+							<div class="botmrd">
+								<select id="outID">
+									<option value ="1">东门出口1</option>
+									<option value ="1">东门出口2</option>
+								</select>
+								<button type="button" class="btn btn-suc ms">呼叫</button>
+								<button type="button" class="btn btn-deg ms">关闸</button>
+								<button type="button" class="btn btn-primary ms">开闸</button>								
+							</div>
+						</div>
+						
+					</div>
+					<div class="bgmaind"></div>
+					<!--./bgmaind-->
+					<div class="ltcond ltcond2" id="ltcond2">
+						<div class="lcond d-width" >
+							<div class="cond">
+								<div class="bg"></div>
+								<div class="titd">
+									<p class="lf iconc">出口对比照片</p>
+									<p class="rf">2019-10-14 11:59:59 出场</p>
+								</div>
+								<div class="imgd divbg swiperd">
+									<div class="swiper-container swiper1 swbg">
+									  <div class="swiper-wrapper">
+									    <div class="swiper-slide"><img src="images/bg1.png" ></div>
+									    <div class="swiper-slide"><img src="images/bg1.png" ></div>
+									    <div class="swiper-slide"><img src="images/bg1.png" ></div>
+									  </div>
+									   <div class="swiper-pagination"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--./rcond-->
+						<div class="rcond d-width">
+							<div class="cond">
+								<div class="bg"></div>
+								<div class="titd">
+									<p class="lf iconc">出口对比照片</p>
+									<p class="rf">2019-10-14 11:59:59 入场</p>
+								</div>
+								<div class="imgd divbg swiperd">
+									<div class="swiper-container swiper2 swbg">
+									  <div class="swiper-wrapper">
+									    <div class="swiper-slide"><img src="images/ceshi11.jpg" ></div>
+									    <div class="swiper-slide"><img src="images/ceshi11.jpg" ></div>
+									    <div class="swiper-slide"><img src="images/ceshi11.jpg" ></div>
+									  </div>
+									   <div class="swiper-pagination"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--./rcond-->
+					</div>
+					<!-- <ul>
+						<li class="mr mb">1</li>
+						<li class="mb">2</li>
+						<li class="mr">3</li>
+						<li>4</li>
+					</ul> -->
+				</div>
+				<!--./ltopd-->
+				<div class="bgmaind"></div>
+				<!--./bgmaind-->
+				<div class="lbotd">
+					<div class="titd">
+						<div class="tld">
+							<span states="0">在场车辆</span>
+							<span states="1">入场记录</span>
+							<span states="2">出场记录</span>
+							<span states="3">收费记录</span>
+						</div>
+						<div class="trd">
+							<span>车牌：</span>
+							<input type="text" autocomplete="off">
+							<span class="inpl">入场时间：</span>
+							<input type="text" class="begintime date " readonly="readonly" autocomplete="off" placeholder="请选择开始时间"/>
+							<input type="text" class="endtime date " readonly="readonly" autocomplete="off" placeholder="请选择结束时间"/>
+							<button type="button" class="btn-primary msd hei" id="seacheID" style="margin-left: 0;">查询</button>
+						</div>
+					</div>
+					<!--./titd-->
+					<div class="lbtcod">
+						<div class="bcon tab">
+							<div class="bcld swiperd">
+								<div class="swiper-container swiper3">
+								  <div class="swiper-wrapper">
+								    <div class="swiper-slide"><img src="images/ceshi11.jpg" ></div>
+								    <div class="swiper-slide"><img src="images/ceshi11.jpg" ></div>
+								    <div class="swiper-slide"><img src="images/ceshi11.jpg" ></div>
+								  </div>
+								   <div class="swiper-pagination"></div>
+								</div>
+							</div>
+							<div class="bcrd">
+								<table cellspacing="0" cellpadding="0">
+									<tr >
+										<th>入场时间</th>
+										<th>入场车牌</th>
+										<th>注册号码</th>
+										<th>可信度</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td><a href="javascript:;" class="acolor">点击收费</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<!--./bcon-->
+						<div class="bcod1 tab" name="tab">
+							<div class="ovd">
+								<table  cellspacing="0" cellpadding="0">
+									<tr >
+										<th>入场时间</th>
+										<th>入场车牌</th>
+										<th>注册号码</th>
+										<th>计费类型</th>
+										<th>车辆分组</th>
+										<th>车辆类型</th>
+										<th>车主姓名</th>
+										<th>到期时间</th>
+										<th>备注信息</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td><a href="javascript:;" class="acolor">点击收费</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<!--./bcod1-->
+						<div class="bcod1 tab" name="tab">
+							<div class="ovd">
+								<table  cellspacing="0" cellpadding="0">
+									<tr >
+										<th>入场时间3</th>
+										<th>入场车牌3</th>
+										<th>注册号码</th>
+										<th>计费类型</th>
+										<th>车辆分组</th>
+										<th>车辆类型</th>
+										<th>车主姓名</th>
+										<th>到期时间</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td><a href="javascript:;" class="acolor">点击收费</a></td>	
+									</tr>
+								</table>
+							</div>
+						</div>
+						<!--./bcod1-->
+						<div class="bcod1 tab" name="tab">
+							<div class="ovd">
+								<table  cellspacing="0" cellpadding="0">
+									<tr >
+										<th>入场时间4</th>
+										<th>入场车牌4</th>
+										<th>注册号码</th>
+										<th>计费类型</th>
+										<th>车辆分组</th>
+										<th>车辆类型</th>
+										<th>车主姓名</th>
+										<th>到期时间</th>
+										<th>备注信息</th>
+										<th>操作</th>
+									<tr>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td><a href="javascript:;" class="acolor">点击收费</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<!--./bcod1-->
+					</div>
+					<!--./lbtcod-->
+				</div>
+				<!--./lbotd-->
+			</div>
+		</div>
+		<!--./conl-->
+		<div class="conrd">
+			<div class="conr">
+				
+				<div class="cutd">
+					<div class="conind" id="rightID2">
+						<p class="tit">确认信息</p>
+						<div class="con">
+							<div class="labd labd2">
+								<p>注册号码： <input type="text" value="770524117"><button type="button" class=" btn-primary ms lfft" style="display: none;">在线缴费结果</button></p>
+							</div>
+							<div class="labd labd2">
+								<p>车牌号码： <input type="text" value="770524117"><button type="button" class=" btn-deg ms lfft" id="" style="display:none ;">异常处理</button></p>
+							</div>
+							<div class="labd labd2">
+								<p>入场时间： <span class="colord">05/06/2019 23:59:59</span></p>
+							</div>
+						<!-- 	<div class="labd labd2">
+								<p>出场时间： <span class="colord">05/07/2019 02:56:12</span> </p>
+							</div> -->
+							<div class="labd labd2">
+								<p>确认时间： <span class="colord">1小时52分03秒</span></p>
+							</div>
+							<div class="labd labd2">
+								<p>停车时间： <span class="colord">05/23/2019 23:59:59</span></p>
+							</div>
+							<div class="labd labd2">
+								<p class="lf lfw">计费类型： <span class="colord">临时车</span></p>
+								<p class="lf">车辆类型： <span class="colord">临时车</span></p>
+							</div>
+							<div class="labd labd2">
+								<p class="lf lfw">应收金额： <span class="mcolor">￥0.01</span></p>
+								<p class="lf">折扣金额： <span class="mcolor" id="disNumID">￥0.01</span></p>
+							</div>
+							<div class="labd labd2">
+								<p class="lf lfw">已缴金额： <span class="mcolor">￥0.01</span></p>
+								<p class="lf">税额： <span class="mcolor" id="disNumID">￥0.01</span></p>
+							</div>
+							<div class="labd labd2">
+								<p class="lf lfw">四舍五入： <span class="mcolor">￥0.01</span></p>
+								<p class="lf">税率： <span class="mcolor" id="disNumID">￥0.01</span></p>
+							</div>
+						</div>
+					</div>
+					<div id="rightID3">
+						<ul class="right3floatd" style="border-top: 1px solid rgb(234, 234, 234);padding-top: 10px;">
+							<li><button type="button" class="btn btn-primary "><i class="icon3">小型车</i></button></li>
+							<li><button type="button" class="btn btn-primary"><i class="icon4">中型车</i></button></li>
+							<li><button type="button" class="btn btn-primary"><i class="icon5">大型车</i></button></li>
+							<li><button type="button" class="btn btn-primary"><i class="icon6">大货车</i></button></li>
+							<li><button type="button" class="btn btn-primary"><i class="icon7">内部车</i></button></li>
+							<li><button type="button" class="btn btn-primary"><i class="icon7">内部车</i></button></li>
+						</ul>
+						<div class="sfinpd">
+						
+							<input type="text">
+							<p>Por favar,toque la tarjeta</p>
+						</div>
+					</div>
+					<!--./rightID3-->
+					<div class="conind" id="rightID1" style="border-top: 1px solid #EAEAEA">
+						<div class="ininfo" style="display: ;">
+							<div>无入场信息</div>
+							<button type="button" class=" btn-deg ms" id="abnormalID" style="height: 32px;">异常处理</button>
+						</div>
+						<!--正常-->
+						<div class="infolistd" style="display: none;">
+							<p class="labd">收费：<span class="mcolor">￥0.01</span></p>
+							<p class="labd">实收： <input type="text" value="770524117"></p>
+							<p class="labd">找零：<span class="mcolor">￥0.01</span></p>
+						</div>
+					
+					</div>
+					<!--./rightID2-->
+					<div id="rightID4" style="background: #fff;border-bottom: none;">
+						<ul class=" ">
+							<li><button type="button" class="btn btn-primary">确认放行</button></li>
+							<li><button type="button" class="btn btn-primary">取消放行</button></li>
+							<li><button type="button" class="btn btn-primary">免费放行</button></li>
+							<li><button type="button" class="btn btn-primary" id="zhekouID">折扣</button></li>
+							<li><button type="button" class="btn btn-primary">打印小票</button></li>
+							<li><button type="button" class="btn btn-primary">打开钱柜</button></li>
+							<li><button type="button" class="btn btn-primary" id="btnhandID">手动入场</button></li>
+							<li><button type="button" class="btn btn-primary" id="loseCardID">丢卡处理</button></li>
+							<li><button type="button" class="btn btn-primary" id="infoserID">卡片信息</button></li>
+						</ul>
+					</div>
+					<!--./rightID4-->
+				</div>	
+				<!--./discountd-->
+			</div>
+			<!--./conr-->
+		</div>
+		<!--./conrd-->
+	</div>
+	<!--./maincond-->
+	<!-- <div class="bottomd">
+		<div class="botld icon1">提示消息： <span class="btcolor">收费机顶盒与网关连接恢复，系统进入联机运营模式</span></div>
+		<div class="botrd">
+			<span class="icon3 mr">网关连接状态：</span>
+			<span class="icon3">网关服务状态：</span>
+			<span class="wd"></span>
+			<span class="icon2">系统当前时间： <span class="colord" id="systemTime"></span></span>
+		</div>
+	</div> -->
+	<!--./bottomd-->
+</div>
+<!--./maind-->
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="plugins/artDialog/dist/dialog-min.js"></script>
+<script src="plugins/jDialog/jdialog.js"></script>
+<script src="plugins/swiper/swiper.min.js"></script>
+<script src="js/tenet-util.js"></script>
+<script type="text/javascript">
+//加载当前记录的tab
+initTab()
+function initTab(){
+	var states = window.localStorage.getItem('tabStates');
+	if(states == null||states == '' || states == 'undefined'){
+		$(".tld span").eq(0).addClass("on").siblings().removeClass('on');
+		$(".lbtcod .tab").hide().eq(0).show();
+	}
+	$(".tld span").eq(states).addClass("on").siblings().removeClass('on');
+	$(".lbtcod .tab").hide().eq(states).show();
+	
+	
+} 	
+
+//底部表格切换
+ $(".tld span").click(function() {
+	 $(".tld span").eq($(this).index()).addClass("on").siblings().removeClass('on');
+	 $(".lbtcod .tab").hide().eq($(this).index()).show();
+		var states = $(this).attr('states');
+		window.localStorage.setItem('tabStates',states);
+		
+		buttonBanner(); //防止底部banner不加载
+		
+});
+//点击查询获取当前转态
+$('#seacheID').click(function(){
+	var states;
+	$(".tld span").each(function(item){
+		if($(this).hasClass('on')){
+			states = $(this).attr('states');
+			
+		}
+	})
+});
+	
+//手动录入
+$('#btnhandID').click(function(){
+	//$.TU_showDialogConfirm('确认提示',0000000000000000000000,'delRecordExe()');
+	$.jDialog({ ___title:'手动入场', ___content:"iframe:secpage/mentry.html", ___width:"560", ___height:"455" });
+})
+
+//异常处理
+$('#abnormalID').click(function(){
+	console.log(1)
+	$.jDialog({ ___title:'异常处理', ___content:"iframe:secpage/abnormal.html", ___width:"1100", ___height:"700" });
+})
+
+//折扣
+$('#zhekouID').click(function(){
+	$.jDialog({ ___title:'折扣信息', ___content:"iframe:secpage/discount.html", ___width:"350", ___height:"350" });
+})
+
+//卡片信息
+$('#infoserID').click(function(){
+	console.log(1)
+	$.jDialog({ ___title:'卡片信息', ___content:"iframe:secpage/infoquery.html", ___width:"500", ___height:"500" });
+})
+//丢卡处理
+$('#loseCardID').click(function(){
+	console.log(1)
+	$.jDialog({ ___title:'卡片信息', ___content:"iframe:secpage/losecard.html", ___width:"1100", ___height:"700" });
+})
+//值班员下班
+$('#zbyxbID').click(function(){
+	$.jDialog({ ___title:'值班员下班', ___content:"iframe:secpage/offduty.html", ___width:"700", ___height:"500" });
+})
+//值班员交班
+$('#zbyjbID').click(function(){
+	$.jDialog({ ___title:'值班员交班', ___content:"iframe:secpage/thenext.html", ___width:"700", ___height:"600" });
+})
+
+$(window).resize(function(){ 
+	onchangeWH();
+	if(!checkFull()){
+		$("#zkqpID").attr("title","点击全屏");
+		$("#zkqpID").attr("states",1);
+	}
+});
+//是否退出全屏	
+function checkFull() { 
+	return document.isFullScreen || document.mozIsFullScreen || document.webkitIsFullScreen
+}
+onchangeWH();
+function  onchangeWH(){
+	var wh=$(window).height();
+	//-设置mainnvd高度
+	var th=1080-wh;
+	if(th>10){th=10;}else if(th<0){th=0;}
+	$('.mainnvd').css({
+		height:50-th + 'px',
+		lineHeight:50-th +'px'
+	});
+	
+	$('.mainnvd .toprd div span').css({
+		height:50-th + 'px',
+		lineHeight:50-th +'px'
+	});
+	$('.mainnvd .toprd .ioned').css({
+		top:50-th + 'px'
+	});
+	$('.mainnvd .toprd .itwod').css({
+		top:50-th + 'px'
+	});
+	//- mainnvd 50px  top+maind+border 34xp  bgmaind 10px bottomd 36px
+	var ch=wh-50-11+th;
+	if(wh<=768){
+		ch = 768-50-11-20+th;
+	}
+	$('.maincond').height(ch);
+	
+	//计算ltopd
+	var ltopd = ch-224-10;
+	$('.ltopd').height(ltopd);
+	var ptid = parseFloat((380/718).toFixed(4));
+	//顶部变比计算
+	var toph = (ltopd*ptid).toFixed(2); 
+	var toph1 = (ltopd-toph).toFixed(2);
+	
+	var ltopdh = $('.ltopd').width();
+	var lw = ((ltopdh-10)/2).toFixed(0);
+	$('#ltcond1 .d-width').css({
+		width:lw-20,
+		height:toph-20
+	}) 
+	$('#ltcond1').height(toph);
+	$('#ltcond1 .topimgd').height(toph-36);
+	$('#ltcond1 .swcond').height(toph-36-10);
+	//计算顶部图片区域高度
+	$('.tcondh').height(toph-32-10-20);
+	$('.ltcond1 .tcondh .divbg').height(toph-32-10-20-30);
+	$('#ltcond2').height(toph1)
+	$('#ltcond2 .d-width').css({
+			width:lw-20,
+			height:toph1-30
+	})	
+	//计算right1,2,3 =600 : right2342 总高度1019
+	var pid = parseFloat((600/1019).toFixed(4));
+	var oh = ((ch*pid)/3).toFixed(2);
+	var th = (ch-(ch*pid)).toFixed(2)
+	$('#rightID1').height(oh-40);
+	$('#rightID2').height(th);
+	$('#rightID3').height(parseInt(oh)+parseInt(40));
+	$('#rightID4').height(oh);
+	//计算按钮300/999 六排按钮
+	var bpid = parseFloat((300/999).toFixed(4));
+	var bh = ((ch*bpid)/6).toFixed(2);
+	$('button[name="change"]').css({
+		height:bh,
+		lineHeight:bh +'px'
+	});
+	//rightID1 padding
+	var rpad1 = ((oh-bh-33-48)/7).toFixed(2);
+	$('#rightID1 .labd').css('padding',''+rpad1+'px 0');
+	
+	//rightID2 padding
+	var rpad2 = ((th-33-96-62)/20).toFixed(2);
+	$('#rightID2 .labd').css('padding',''+rpad2+'px 0');
+	
+	//rightID3 padding
+	var rpad3 = ((oh-10-(bh*3))/4).toFixed(2);
+	$('#rightID3 li').css('padding',''+rpad3+'px 0');
+	
+	//rightID4 padding
+	var rpad4 = (((oh-(35*3))/4)).toFixed(2);
+	$('#rightID4 li').css('padding-top',rpad4+'px');
+	
+	//折扣层高度计算
+	var discount = ch;
+	$('.discountd').height(discount);
+	$('.cutd').height(discount);
+}
+ //鼠标移入
+$(".toprd div").mouseover(function () {
+     $(this).find('ul').show();
+});
+//鼠标移出
+$(".toprd div").mouseout(function () {
+     $(this).find('ul').hide()
+}); 
+
+//点击全屏展示
+$('#zkqpID').click(function(){
+	if($(this).attr('states') == 0){
+		$("#zkqpID").attr("title","点击全屏");
+		$("#zkqpID").attr("states",1);
+		exitFullscreen();
+	}else{
+		$("#zkqpID").attr("title","退出全屏");
+		$("#zkqpID").attr("states",0);
+		requestFullScreen();
+	}
+})
+
+//日历控件
+laydate.render({
+	elem: '.begintime',
+	type: 'datetime',
+	trigger: 'click',
+	
+});
+//结束时间
+laydate.render({
+	elem: '.endtime',
+	type: 'datetime',
+	trigger: 'click',
+	ready: function(date){
+					this.dateTime.hours=23;
+					this.dateTime.minutes=59;
+					this.dateTime.seconds=59;
+				}
+});
+ststemTimeGet()
+function ststemTimeGet(){
+setInterval(function(){
+   var date=new Date();
+   var year=date.getFullYear(); //获取当前年份
+   var mon=date.getMonth()+1; //获取当前月份
+   var da=date.getDate(); //获取当前日
+   var day=date.getDay(); //获取当前星期几
+   var h=date.getHours(); //获取小时
+   var m=date.getMinutes(); //获取分钟
+   var s=date.getSeconds(); //获取秒
+  $('#systemTime').html(year+'年'+mon+'月'+da+'日'+'星期'+day+' '+h+':'+m+':'+s)
+  },1000) 
+
+}
+//全屏切换
+function requestFullScreen(element){
+	var docElm = document.documentElement;
+	if (docElm.requestFullscreen) {
+		docElm.requestFullscreen();
+	} else if (docElm.mozRequestFullScreen) {
+		docElm.mozRequestFullScreen();
+	} else if (docElm.webkitRequestFullScreen) {
+		docElm.webkitRequestFullScreen();
+	} else if (docElm.msRequestFullscreen) {
+		docElm.msRequestFullscreen();
+	}
+}
+function exitFullscreen(element) {
+	if (document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if (document.mozCancelFullScreen) {
+		document.mozCancelFullScreen();
+	} else if (document.webkitCancelFullScreen) {
+		document.webkitCancelFullScreen();
+	} else if (document.msExitFullscreen) {
+		document.msExitFullscreen();
+	}
+}
+
+//top 轮播
+var mySwiper = new Swiper('.swiper-top',{
+slidesPerView : 2,//'auto'
+autoplay: false,//可选选项，自动滑动
+prevButton:'.swiper-button-prev',
+nextButton:'.swiper-button-next'
+})
+
+//中间
+var mySwiper = new Swiper('.swiper1', {
+	autoplay: false,//可选选项，自动滑动
+	loop: false,
+	pagination : '.swiper-pagination',
+	paginationClickable :true,
+	paginationBulletRender: function (swiper, index, className) {
+	      return '<span class="' + className + '">' + (index + 1) + '</span>';
+	  }
+})
+//中间
+var mySwiper = new Swiper('.swiper2', {
+	autoplay: false,//可选选项，自动滑动
+	loop: false,
+	pagination : '.swiper-pagination',
+	paginationClickable :true,
+	paginationBulletRender: function (swiper, index, className) {
+	      return '<span class="' + className + '">' + (index + 1) + '</span>';
+	  }
+})
+//底部轮播
+buttonBanner()
+function buttonBanner(){
+	var mySwiper = new Swiper('.swiper3', {
+		autoplay: false,//可选选项，自动滑动
+		loop: false,
+		pagination : '.swiper-pagination',
+		paginationClickable :true,
+		paginationBulletRender: function (swiper, index, className) {
+			  return '<span class="' + className + '">' + (index + 1) + '</span>';
+		  }
+	})
+}
+</script>
+</body>
+</html>

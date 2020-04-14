@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" type="text/css" href="../plugins/artDialog/css/ui-dialog.css"/>
+<link rel="stylesheet" type="text/css" href="../plugins/jDialog/jdialog.css">
+<script src="../js/jquery-1.8.3.min.js"></script>
+<title>值班员下班</title>
+
+</head>
+<body>
+<div class="offdutyd">
+	<div class="topd">
+		<div class="txt">
+			<p class="lf">应收金额： <span class="bd">549.98</span></p>
+			<p class="rf">折扣金额： <span class="bd">13.04</span></p>
+		</div>
+		<div class="txt">
+			<p class="lf">未确认额： <span class="bd">549.98</span></p>
+			<p class="rf">实收金额： <span class="bd">13.04</span></p>
+		</div>
+		<div class="txt ht">
+			<p class="lf">预付金额： <span class="bd">549.98</span></p>
+			<p class="rf">收到的现金：<input type="text" value="666"></p>
+		</div>
+		<div class="txt">
+			<p class="lf">上班时间： <span class="clr">2019-08-16 13:59:15</span></p>
+		</div>
+	</div>
+	<div class="countd">
+		<form>
+			<div class="inpd">
+				<label for="accountID">当班账号：</label>
+				<input type="text" name="account" id="accountID" value="ms1542" required />
+			</div>
+			<div class="inpd">
+				<label for="accountpwdID">账号密码：</label>
+				<input name="accountpwd" id="accountpwdID" placeholder="请输入密码" required/>
+			</div>
+			<div class="aleartd">11</div>
+			<div class="btnd">
+				<button type="button" class="btn btn-primary mr pbord" id="affirmID">确认无误下班</button>
+				<button type="button" class="btn btn-primary mr pbord">需要对账确认</button>
+				<button type="button" class="def" onclick="$.TU_closejDialog()">返回</button>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="../plugins/artDialog/dist/dialog-min.js"></script>
+<script src="../plugins/jDialog/jdialog.js"></script>
+<script src="../js/tenet-util.js"></script>
+<script type="text/javascript">
+	$('#accountpwdID').focus(function(){
+		this.type= 'password'
+		console.log(this)
+	})
+$('#affirmID').click(function(){
+	var account = $.trim($('#accountID').val());
+	var accountpwd = $.trim($('#accountpwdID').val());
+	if(account.length == 0){
+		$('.aleartd').html('请输入账号');
+		$('#accountID').focus();
+		return;
+	}
+	if(accountpwd.length == 0){
+		$('.aleartd').html('请填写密码');
+		$('#accountpwdID').focus();
+		return;
+	}else if(accountpwd.length <6){
+		$('.aleartd').html('密码长度不够');
+		$('#accountpwdID').focus();
+		return;
+	}
+	
+	$.TU_showDialogConfirm('确认提示','是否确认下班','offDuty()');
+	
+	console.log(account,accountpwd);
+})
+function offDuty(){
+	alert(1);
+	$.TU_closejDialog();
+}
+</script>
+</body>
+</html>

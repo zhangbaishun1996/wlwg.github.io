@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" type="text/css" href="../plugins/artDialog/css/ui-dialog.css"/>
+<link rel="stylesheet" type="text/css" href="../plugins/jDialog/jdialog.css">
+<script src="../js/jquery-1.8.3.min.js"></script>
+<title>值班员交班</title>
+
+</head>
+<body>
+<div class="tnextd">
+	<div class="topd">
+		<div class="txt">
+			<p class="lf">应收金额： <span class="bd">549.98</span></p>
+			<p class="rf">折扣金额： <span class="bd">13.04</span></p>
+		</div>
+		<div class="txt">
+			<p class="lf">未确认额： <span class="bd">549.98</span></p>
+			<p class="rf">实收金额： <span class="bd">13.04</span></p>
+		</div>
+		<div class="txt ht">
+			<p class="lf">预付金额： <span class="bd">549.98</span></p>
+			<p class="rf">收到的现金：<input type="text" value="666" style="border-bottom: 1px solid #ccc;"></p>
+		</div>
+		<div class="txt">
+			<p class="lf">上班时间： <span class="clr">2019-08-16 13:59:15</span></p>
+		</div>
+	</div>
+	<div class="countd">
+		<form>
+			<div class="inpd">
+				<label for="jiaobrID">交班人账号：</label>
+				<input type="text" name="jiaobr" id="jiaobrID" value="ms1542">
+			</div>
+			<div class="inpd">
+				<label for="jiaobrpwdID">交班人密码：</label>
+				<input type="password" name="jiaobrpwd" id="jiaobrpwdID"placeholder="请输入密码交班人密码">
+			</div>
+			
+			<div class="inpd">
+				<label for="jiebrID">接班人账号：</label>
+				<select name="jiebr" id="jiebrID">
+					<option value ="1">ms1542</option>
+					<option value ="2">ms6642</option>
+				</select>
+				
+			</div>
+			<div class="inpd">
+				<label for="jiebrpwdID">接班人密码：</label>
+				<input type="password" name="jiebrpwd" id="jiebrpwdID"placeholder="请输入密码接班人密码">
+			</div>
+			<div class="aleartd">11</div>
+			<div class="btnd">
+				<button type="button" class="btn btn-primary mr pbord" id="affirmID">确认无误下班</button>
+				<button type="button" class="btn btn-primary mr pbord">需要对账确认</button>
+				<button type="button" class="def" onclick="$.TU_closejDialog()">返回</button>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="../plugins/artDialog/dist/dialog-min.js"></script>
+<script src="../plugins/jDialog/jdialog.js"></script>
+<script src="../js/tenet-util.js"></script>
+<script type="text/javascript">
+$('#affirmID').click(function(){
+	var jiaobr = $.trim($('#jiaobrID').val());
+	var jiaobrpwd = $.trim($('#jiaobrpwdID').val());
+	var jiebr = $.trim($('#jiebrID option:selected').val());
+	var jiebrpwd = $.trim($('#jiebrpwdID').val());
+
+	if(jiaobr.length == 0){
+		$('.aleartd').html('请输入账号');
+		$('#jiaobrID').focus();
+		return;
+	}
+	if(jiaobrpwd.length == 0){
+		$('.aleartd').html('请填写交班人密码');
+		$('#jiaobrpwdID').focus();
+		return;
+	}else if(jiaobrpwd.length <6){
+		$('.aleartd').html('密码长度不够');
+		$('#jiaobrpwdID').focus();
+		return;
+	}
+	if(jiebrpwd.length == 0){
+		$('.aleartd').html('请填写接班人密码');
+		$('#jiebrpwdID').focus();
+		return;
+	}else if(jiebrpwd.length <6){
+		$('.aleartd').html('密码长度不够');
+		$('#jiebrpwdID').focus();
+		return;
+	}
+	
+	$.TU_showDialogConfirm('确认提示','是否确认交班','offDuty()');
+	
+	console.log(jiaobr,jiaobrpwd,jiebr,jiebrpwd);
+})
+function offDuty(){
+	alert(1);
+	$.TU_closejDialog();
+}
+</script>
+</body>
+</html>
+

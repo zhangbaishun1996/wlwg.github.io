@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="css/main.css">
+<title>登录</title>
+<style type="text/css">
+body{width:100%;height: 100%;background:#59B7FF;background:-webkit-linear-gradient(left,#59B7FF,#0090ff );background:-o-linear-gradient(right,#59B7FF,#0090ff );background:-moz-linear-gradient(right,#59B7FF,#0090ff );background:linear-gradient(to right,#59B7FF,#0090ff );}
+</style>
+</head>
+<body>
+<div class="logindp">
+	<div class="logind">
+		<form>
+		<div class="lgcod pad">
+			<div class="logod"></div>
+			<p class="tit">欢迎使用停车场专用收费机顶盒</p>
+			<div class="inpd iuser">
+				<input type="text" class="trans" name="user" id="userID" autocomplete="off" placeholder="请输入用户名">
+				<span class="closed" onclick="clearInp($(this))"></span>
+			</div>
+			<div class="inpd ipwd">
+				<input type="text" class="trans" name="pwd" id="pwdID" autocomplete="off" placeholder="请输入密码">
+				<span class="closed" onclick="clearInp($(this))"></span>
+			</div>
+			<div class="alertd">提示</div>
+			<div class="btnd">
+				<button type="button" class="btn btn-primary" id="submitID">登录</button>
+			</div>
+			
+		</div>	
+		</form>
+	</div>
+	
+</div>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/tenet-util.js" ></script>
+<script type="text/javascript">
+	
+$('.inpd input').on('input propertychange', function() {//监听文本框
+	if($(this).val().length != 0){
+		$(this).next().show();
+	}else{
+		$(this).next().hide();
+	}
+});
+function clearInp(cur){
+	$(cur).prev().val('');
+	$(cur).hide();
+}
+
+
+$('#submitID').click(function(){
+	var user = $('#userID').val();
+	var pwd = $('#pwdID').val();
+	if(user.length==0){
+		$('#userID').css('border-bottom','1px solid red');
+		return; 
+	}
+	$('#userID').css('border-bottom','1px solid #CCCCCC');
+	if(pwd.length == 0){
+		$('#pwdID').css('border-bottom','1px solid red');
+		return; 
+	}
+	$('#pwdID').css('border-bottom','1px solid #CCCCCC');
+	window.location.href = 'index.html';
+})
+</script>
+</body>
+</html>
